@@ -1,6 +1,9 @@
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import NewRecipeScreen from './components/newRecipeComponents/NewRecipeScreen'
+import HomeScreen from './components/homeComponents/HomeScreen'
+import DetailScreen from './components/detailComponents/DetailScreen'
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -8,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route element={<HomeScreen />} />
+        <Route index element={<HomeScreen />} />
         <Route path='newRecipe' element={<NewRecipeScreen />} />
         <Route path='recipe/:id'element={<DetailScreen />} />
       </Routes>

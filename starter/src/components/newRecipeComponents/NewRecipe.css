@@ -18,11 +18,13 @@ section {
   border: 1px solid #989898;
   border-radius: 3px;
   font-size: 20px;
+  padding: 15px;
 }
 form input[type=radio] {
   height: 35px;
   width: 35px;
   border: 3px;
+
 }
 
 form label {
@@ -36,6 +38,7 @@ form input:focus {
 
 form h5 {
   color: black;
+
 }
 
 textarea {
@@ -66,9 +69,9 @@ textarea {
 .input_container input {
   width: 100%;
 }
-/* .input_container div {
+.input_container div {
   width: 100%;
-} */
+}
 
 .ingredient_inputs {
   display: flex;
@@ -79,4 +82,8 @@ textarea {
 
 ul {
   width: 50%;
+}
+button:hover{
+background: rgb(18, 55, 55);
+cursor: pointer;
 }

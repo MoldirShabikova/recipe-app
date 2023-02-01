@@ -3,8 +3,6 @@ import  "./NewRecipe.css";
 import { Formik } from "formik";
 import axios from "axios";
 
-// const url =  "https://recipes.devmountain.com/recipes";;
-
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState("");
@@ -36,6 +34,7 @@ const onSubmit = (values) => {
   axios
     .post(`https://recipes.devmountain.com/recipes`, values)
     .then((res) => {
+      alert('Recipe added!')
       console.log(res.data);
     })
     .catch((err) => {

@@ -3,11 +3,14 @@ import  "./NewRecipe.css";
 import { Formik } from "formik";
 import axios from "axios";
 
+// const url =  "https://recipes.devmountain.com/recipes";;
+
 const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
-  const url = "https://recipes.devmountain.com";
+
+
 
   const addIngredient = () => {
     setIngredients([...ingredients, { name, quantity }]);
@@ -26,23 +29,23 @@ const NewRecipeScreen = () => {
     instructions: "",
   };
 
-  const onSubmit = (values) => {
-    values.ingredients = ingredients;
-    console.log(values);
-  };
-  //   axios
-  //     .post(`https://recipes.devmountain.com/recipes`, values)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+const onSubmit = (values) => {
+  values.ingredients = ingredients;
+  console.log(values);
+
+  axios
+    .post(`https://recipes.devmountain.com/recipes`, values)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
   const ingredientDisplay = ingredients.map((ing) => {
     return (
-      <li>
+      <li key={Math.floor(Math.random()* 10)}>
         {ing.quantity} {ing.name}
       </li>
     );
